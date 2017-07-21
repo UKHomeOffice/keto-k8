@@ -1,5 +1,5 @@
-hash: 9fcb57d430ba01e4a0d95a129256c1541b0c59b4bfbc1690ab2bcefccdeefee4
-updated: 2017-07-10T10:37:56.159188624+01:00
+hash: 5811d9b985bed8a5f89d45c752b202a00089f9287e3042eaf1994f261119209d
+updated: 2017-07-21T13:40:34.031594399+01:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -248,12 +248,12 @@ imports:
   subpackages:
   - codec
 - name: github.com/UKHomeOffice/keto
-  version: d4d9cf9a2b5ddf16918c4240843211b428710a71
+  version: f86035b1cc8357d15dc3256497036a56b74e1ec6
   subpackages:
   - pkg/cloudprovider
   - pkg/cloudprovider/providers
   - pkg/cloudprovider/providers/aws
-  - pkg/constants
+  - pkg/keto/util
   - pkg/model
 - name: golang.org/x/crypto
   version: d172538b2cfce0c13cee31e647d0367aa8cd2486
@@ -510,7 +510,7 @@ imports:
   - util/jsonpath
   - util/workqueue
 - name: k8s.io/kubernetes
-  version: d3ada0119e776222f11ec7945e6d860061339aad
+  version: 922a86cfcd65915a9b2f69f3f193b8907d741d9c
   subpackages:
   - cmd/kubeadm/app/apis/kubeadm
   - cmd/kubeadm/app/apis/kubeadm/v1alpha1

@@ -12,6 +12,6 @@ import:
 - package: k8s.io/apimachinery
   version: 4d3c9f54ada2537bd5041d08f886f18419c39fee
 - package: k8s.io/kubernetes
-  version: 1.7.0
+  version: 1.7.2
 - package: github.com/UKHomeOffice/keto
-  version: d4d9cf9a2b5ddf16918c4240843211b428710a71
+  version: f86035b1cc8357d15dc3256497036a56b74e1ec6

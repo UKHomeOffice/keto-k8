@@ -26,7 +26,7 @@ func (k *Config) Addons() error {
 		return err
 	}
 
-	if err := apiconfigphase.UpdateMasterRoleLabelsAndTaints(client); err != nil {
+	if err := apiconfigphase.UpdateMasterRoleLabelsAndTaints(client, k.KubeletID); err != nil {
 		return err
 	}
 

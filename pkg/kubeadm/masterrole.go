@@ -18,7 +18,7 @@ func (cfg *Config) UpdateMasterRoleLabelsAndTaints() error {
 		return err
 	}
 
-	if err := apiconfigphase.UpdateMasterRoleLabelsAndTaints(client); err != nil {
+	if err := apiconfigphase.UpdateMasterRoleLabelsAndTaints(client, cfg.KubeletID); err != nil {
 		return err
 	}
 	return nil
