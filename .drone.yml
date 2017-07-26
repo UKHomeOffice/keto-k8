@@ -53,17 +53,6 @@ pipeline:
     when:
       event: [pull_request]
 
-  image_to_quay:
-    image: docker:1.12
-    environment:
-      - DOCKER_HOST=tcp://127.0.0.1:2375
-    commands:
-      - docker login -u="ukhomeofficedigital+drone_keto_k8" -p=${DOCKER_PASSWORD} quay.io
-      - docker tag image quay.io/ukhomeofficedigital/keto-k8:${DRONE_COMMIT_SHA}
-      - docker push quay.io/ukhomeofficedigital/keto-k8:${DRONE_COMMIT_SHA}
-    when:
-      event: push
-
   tag_image_to_quay:
     image: docker:1.12
     environment:
