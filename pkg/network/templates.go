@@ -394,6 +394,15 @@ spec:
             - mountPath: /var/run/calico
               name: var-run-calico
               readOnly: false
+        # This allows setting strict filtering for calico for all interfaces
+        - name: strict-rp-filter
+          image: busybox
+          command: ["sh", "-c", "echo 1 >/host/proc/sys/net/ipv4/conf/all/rp_filter; while true ; do sleep 100 ; done"]
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /host/proc
+              name: proc
         # This container installs the Calico CNI binaries
         # and CNI network config file on each node.
         - name: install-cni
@@ -418,7 +427,7 @@ spec:
         # This container runs flannel using the kube-subnet-mgr backend
         # for allocating subnets.
         - name: kube-flannel
-          image: quay.io/coreos/flannel:v0.7.1
+          image: quay.io/coreos/flannel:v0.8.0
           command: [ "/opt/bin/flanneld", "--ip-masq", "--kube-subnet-mgr" ]
           securityContext:
             privileged: true
@@ -468,6 +477,10 @@ spec:
         - name: flannel-cfg
           configMap:
             name: canal-config
+        - name: proc
+          hostPath:
+            path: /proc
+
 
 ---
 
